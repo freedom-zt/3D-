@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @keyframes rotate {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        100% {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+    }
+    
+    body {
+        perspective: 3000px;
+        overflow: hidden;
+    }
+    
+    html {
+        background: linear-gradient(#73706e 0%, #a8a8a8 80%);
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .box {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        margin: 200px auto;
+        transform-style: preserve-3d;
+        animation: rotate 10s infinite linear;
+        transition: all 1s;
+    }
+    
+    .box>div {
+        width: 400px;
+        height: 400px;
+        /*top:100px;*/
+        /*left:100px;*/
+        position: absolute;
+        border: 2px solid #fff;
+        background-color: rgba(0, 0, 0, .5);
+        transition: all .5s;
+    }
+    
+    .box>span {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -50px 0 0 -50px;
+        border: 2px solid #000;
+        background-color: rgba(255, 255, 255, .5);
+    }
+    
+    .box>s {
+        display: block;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -100px;
+        border: 2px solid #fff;
+        background-color: rgba(122, 122, 122, .5);
+        transition: all .5s;
+    }
+    
+    .out-before {
+        transform: rotateY(0deg) translateZ(200px);
+    }
+    
+    .out-right {
+        transform: rotateY(90deg) translateZ(200px);
+    }
+    
+    .out-after {
+        transform: rotateY(180deg) translateZ(200px);
+    }
+    
+    .out-left {
+        transform: rotateY(270deg) translateZ(200px);
+    }
+    
+    .out-top {
+        transform: rotateX(90deg) translateZ(200px);
+    }
+    
+    .out-bottom {
+        transform: rotateX(-90deg) translateZ(200px);
+    }
+    /*中盒子*/
+    
+    .before {
+        transform: rotateY(0deg) translateZ(100px);
+    }
+    
+    .right {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+    
+    .after {
+        transform: rotateY(180deg) translateZ(100px);
+    }
+    
+    .left {
+        transform: rotateY(270deg) translateZ(100px);
+    }
+    
+    .top {
+        transform: rotateX(90deg) translateZ(100px);
+    }
+    
+    .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+    /*小盒子*/
+    
+    .in-before {
+        transform: rotateY(0deg) translateZ(50px);
+    }
+    
+    .in-right {
+        transform: rotateY(90deg) translateZ(50px);
+    }
+    
+    .in-after {
+        transform: rotateY(180deg) translateZ(50px);
+    }
+    
+    .in-left {
+        transform: rotateY(270deg) translateZ(50px);
+    }
+    
+    .in-top {
+        transform: rotateX(90deg) translateZ(50px);
+    }
+    
+    .in-bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+    }
+    /*.box:hover {*/
+    /*animation-play-state: paused;*/
+    /*}*/
+    /*鼠标移动到大盒子*/
+    
+    .box:hover .out-before {
+        transform: rotateY(0deg) translateZ(400px);
+    }
+    
+    .box:hover .out-right {
+        transform: rotateY(90deg) translateZ(400px);
+    }
+    
+    .box:hover .out-after {
+        transform: rotateY(180deg) translateZ(400px);
+    }
+    
+    .box:hover .out-left {
+        transform: rotateY(270deg) translateZ(400px);
+    }
+    
+    .box:hover .out-top {
+        transform: rotateX(90deg) translateZ(400px);
+    }
+    
+    .box:hover .out-bottom {
+        transform: rotateX(-90deg) translateZ(400px);
+    }
+    /*鼠标移动到中盒子*/
+    
+    .box:hover .before {
+        transform: rotateY(0deg) translateZ(200px);
+    }
+    
+    .box:hover .right {
+        transform: rotateY(90deg) translateZ(200px);
+    }
+    
+    .box:hover .after {
+        transform: rotateY(180deg) translateZ(200px);
+    }
+    
+    .box:hover .left {
+        transform: rotateY(270deg) translateZ(200px);
+    }
+    
+    .box:hover .top {
+        transform: rotateX(90deg) translateZ(200px);
+    }
+    
+    .box:hover .bottom {
+        transform: rotateX(-90deg) translateZ(200px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="out-before"></div>
+        <div class="out-after"></div>
+        <div class="out-left"></div>
+        <div class="out-right"></div>
+        <div class="out-top"></div>
+        <div class="out-bottom"></div>
+        <span class="in-before"></span>
+        <span class="in-after"></span>
+        <span class="in-left"></span>
+        <span class="in-right"></span>
+        <span class="in-top"></span>
+        <span class="in-bottom"></span>
+        <s class="before"></s>
+        <s class="after"></s>
+        <s class="left"></s>
+        <s class="right"></s>
+        <s class="top"></s>
+        <s class="bottom"></s>
+    </div>
+</body>
+
+</html>
